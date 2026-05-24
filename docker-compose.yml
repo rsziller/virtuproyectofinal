@@ -1,0 +1,57 @@
+services:
+
+  frontend:
+    build: ./frontend
+    container_name: vue_frontend
+
+    ports:
+      - "5508:5508"
+
+    depends_on:
+      - backend
+
+    networks:
+      app_network:
+        ipv4_address: 10.27.27.10
+
+  backend:
+    build: ./backend
+    container_name: flask_backend
+
+    ports:
+      - "5000:5000"
+
+    env_file:
+      - .env
+
+    depends_on:
+      - mongo
+
+    networks:
+      app_network:
+        ipv4_address: 10.27.27.20
+
+  mongo:
+    image: mongo:7
+    container_name: mongodb
+
+    restart: always
+
+    volumes:
+      - mongo_data:/data/db
+
+    networks:
+      app_network:
+        ipv4_address: 10.27.27.30
+
+volumes:
+  mongo_data:
+
+networks:
+
+  app_network:
+    driver: bridge
+
+    ipam:
+      config:
+        - subnet: 10.27.27.0/24
