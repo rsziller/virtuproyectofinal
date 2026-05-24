@@ -3,7 +3,8 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const api = 'http://localhost:32469'
+//const api = 'http://localhost:32469'
+const api = 'http://35.223.125.224:5000'
 
 const loggedIn = ref(false)
 
