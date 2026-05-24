@@ -24,9 +24,10 @@ spec:
 
       - name: backend
 
-        image: flask-backend
+        #image: flask-backend
+        image: us-central1-docker.pkg.dev/project-174cc443-c77e-47fb-ac5/repo-virtualizacion/backend:1.0
 
-        imagePullPolicy: Never
+        #imagePullPolicy: Never
 
         ports:
         - containerPort: 5000

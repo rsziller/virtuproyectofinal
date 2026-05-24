@@ -24,9 +24,10 @@ spec:
 
       - name: frontend
 
-        image: vue-frontend
+        #image: vue-frontend
+        image: us-central1-docker.pkg.dev/project-174cc443-c77e-47fb-ac5/repo-virtualizacion/frontend:1.0
 
-        imagePullPolicy: Never
+        #imagePullPolicy: Never
 
         ports:
         - containerPort: 5508

@@ -6,7 +6,8 @@ metadata:
 
 spec:
 
-  type: NodePort
+  #type: NodePort
+  type: LoadBalancer
 
 
 
